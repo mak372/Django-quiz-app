@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Congratulations</title>
+	<style>
+		ul
+		{
+			font-size: 30px;
+			float: left;
+		}
+		button
+		{
+			font-size: 25px;
+		}
+		a
+		{
+			font-size: 25px;
+		}
+	</style>
+</head>
+<body style="background-color: lightblue">
+	<h2 style="text-align: center;">Congratulations you have answered all the questions successfully</h2>
+	<img style="padding-left: 45%"src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/facebook/230/thumbs-up-sign_1f44d.png"></img>
+	<br><br>
+	<button onclick="window.print()">Print result</button>
+	<a style="padding-left: 45%" href="{% url 'quiz' %}">Back to quiz</a>
+	<a href="/logout">logout</a>
+	<h2>Correct answers and your responses</h2>
+	<ul>
+		{% for answer in answers %}
+			<li>{{answer}}</li>
+		{% endfor %}
+	</ul>
+	<ul>
+		{% for response in responses %}
+			<li>{{response}}</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>

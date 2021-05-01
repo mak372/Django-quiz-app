@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Welcome to the quiz</title>
+	<link href="{% static 'task/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+	<marquee>Challenge yourself with the quiz given below lets see if you got skills</marquee>
+	<form action="{% url 'answers' %}" method="post">
+		{% csrf_token %}
+  		<label for="q1">1) pip install is associated with which language</label><br><br>
+  		<input type="text" id="q1" name="q1"><br><br>
+  		<label for="q2">2) for i in range(1,20), what will be the final value of i</label><br><br>
+  		<input type="text" id="q2" name="q2"><br><br>
+  		<label for="q3">3) What marks the end of a sql query ?</label><br><br>
+  		<input type="text" id="q3" name="q3"><br><br>
+  		<label for="q4">4) Latest version of python?</label> <br><br>
+  		<input type="text" id="q4" name="q4"><br><br>
+  		<label for="q5">5) Is python faster than C++ ?</label><br><br>
+  		<input type="text" id="q5" name="q5"><br><br>
+  		<input type="submit"></input><br><br>
+	</form>
+</body>
+</html>
